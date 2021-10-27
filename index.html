@@ -1,0 +1,29 @@
+---
+layout: default
+title: Home
+---
+<div class="home-search jumbotron row">
+  <form class="search-form form-inline" role="form" action="/">
+    <div class="form-group">
+      <label class="sr-only" for="home-search">Search the knowledge base</label>
+      <input type="search" class="form-control input-lg" name="search" id="home-search" size="50" placeholder="Search the knowledge base">
+      <button type="submit" class="btn btn-primary btn-lg">Search</button>
+    </div>
+  </form>
+</div>
+<div class="home-categories row">
+  {% for category in site.categories %}
+    <div class="col col-sm-4">
+      <div class="panel panel-default cat-{{category[0]}}">
+        <h2 class="panel-heading">{{category[1]}}</h2>
+        <ul class="list-group pages">
+          {% for page in site.pages %}
+            {% if page.category == category[0] %}
+            <li class="list-group-item page"><a href="{{page.url}}">{{page.title}}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endfor %}
+</div>

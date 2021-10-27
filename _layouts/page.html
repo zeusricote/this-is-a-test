@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<div class="row">
+    <div class="col-sm-3">
+
+        {% include menu.html %}
+
+    </div>
+    <div class="col-sm-9">
+
+        <section class="content">
+            <h1 class="title">{{page.title}}</h1>
+
+            {{ content }}
+
+            <div id="editor">
+            </div>
+
+            <div class="page-meta clearfix">
+                <div class="contact-support pull-left">
+                    <span class="glyphicon glyphicon-envelope"></span> Still need help? <a href="mailto:{{site.email}}">Get in touch!</a>
+                </div>
+                <!-- <div class="last-updated pull-right">
+                    Last updated on {{page.last_modified}}
+                </div> -->
+            </div>
+        </section>
+
+    </div>
+</div>
